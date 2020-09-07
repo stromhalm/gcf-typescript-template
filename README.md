@@ -1,6 +1,6 @@
 # Starter Template for Google Cloud Functions using TypeScript
 
-This is a minimal starter template that helps to get a Google Cloud Function up and running using the TypeScript in Google's NodeJS environment. Local development is made easy.
+This is a minimal starter template that helps to get a Google Cloud Function up and running using TypeScript in Google's NodeJS environment. Local development is made easy.
 
 Install with NPM:
 ```
