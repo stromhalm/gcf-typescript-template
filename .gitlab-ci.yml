@@ -1,0 +1,33 @@
+variables:
+  GCLOUD_PROJECT: your-gcloud-project-id
+  GCLOUD_FUNCTION: imageGenerator
+  GCLOUD_REGION: europe-west1
+  GCLOUD_MEMORY: 512MB
+
+build-stage:
+  stage: build
+  image: node
+  environment:
+    name: stage
+  script:
+    - npm install
+    - npm run build
+  only:
+    - master
+  artifacts:
+    expire_in: 2 hrs
+    paths:
+      - dist/
+
+deploy-stage:
+  stage: deploy
+  image: google/cloud-sdk
+  environment:
+    name: stage
+  script:
+    - gcloud auth activate-service-account --key-file google-service-account.json
+    - gcloud functions deploy $GCLOUD_FUNCTION --region europe-west1 --runtime nodejs10 --trigger-http --project $GCLOUD_PROJECT --memory $GCLOUD_MEMORY --allow-unauthenticated
+  dependencies:
+    - build-stage
+  only:
+    - master

@@ -1,0 +1,27 @@
+{
+  "name": "gcf-typescript-template",
+  "version": "1.0.0",
+  "description": "Starter Template for Google Cloud Functions using TypeScript",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "function": "node function",
+    "action": "node action",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stromhalm/gcf-typescript-template.git"
+  },
+  "author": "Adrian Jagusch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stromhalm/gcf-typescript-template/issues"
+  },
+  "homepage": "https://github.com/stromhalm/gcf-typescript-template#readme",
+  "devDependencies": {
+    "@google-cloud/functions-framework": "*",
+    "tsc-watch": "*",
+    "typescript": "*"
+  }
+}
