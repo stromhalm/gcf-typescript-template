@@ -13,7 +13,7 @@ Start a local webserver with TypeScript compilation and hot reloading for the ex
 ```
 npm run function -- --target=myGcfTest
 ```
-Your function `myGcfTest` will be continupusly served on `http://localhost:9000`
+Your function `myGcfTest` will be continuously served on `http://localhost:9000`
 
 To compile TypeScript and execute any function as a one-time action in the terminal, run:
 ```
