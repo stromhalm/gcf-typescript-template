@@ -26,7 +26,7 @@ deploy-stage:
     name: stage
   script:
     - gcloud auth activate-service-account --key-file google-service-account.json
-    - gcloud functions deploy $GCLOUD_FUNCTION --region europe-west1 --runtime nodejs10 --trigger-http --project $GCLOUD_PROJECT --memory $GCLOUD_MEMORY --allow-unauthenticated
+    - gcloud functions deploy $GCLOUD_FUNCTION --region $GCLOUD_REGION --runtime nodejs10 --trigger-http --project $GCLOUD_PROJECT --memory $GCLOUD_MEMORY --allow-unauthenticated
   dependencies:
     - build-stage
   only:
